@@ -1,0 +1,15 @@
+node_modules/
+.env
+npm-debug.log*
+.DS_Store
+
+# SQLite database
+/data/*.db
+/data/*.sqlite
+
+# Uploads
+/uploads/*
+!/uploads/.gitkeep
+
+# Build outputs
+/dist/

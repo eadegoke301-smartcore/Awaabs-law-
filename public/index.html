@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Report Damp and Mould</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>Report Damp and Mould</h1>
+    <p class="muted">This tool helps you report issues and track expected timelines under Awaab’s Law. It is not legal advice.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Your details</h2>
+      <form id="reportForm" enctype="multipart/form-data">
+        <div class="grid">
+          <label>
+            <span>Full name</span>
+            <input name="residentName" type="text" autocomplete="name" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input name="contactEmail" type="email" autocomplete="email" />
+          </label>
+          <label>
+            <span>Phone</span>
+            <input name="contactPhone" type="tel" autocomplete="tel" />
+          </label>
+        </div>
+
+        <h3>Home address</h3>
+        <div class="grid">
+          <label>
+            <span>Address line 1</span>
+            <input name="addressLine1" type="text" autocomplete="address-line1" />
+          </label>
+          <label>
+            <span>Address line 2</span>
+            <input name="addressLine2" type="text" autocomplete="address-line2" />
+          </label>
+          <label>
+            <span>Postcode<span class="required">*</span></span>
+            <input name="postcode" type="text" required />
+          </label>
+        </div>
+
+        <h3>Landlord or housing provider</h3>
+        <div class="grid">
+          <label>
+            <span>Name</span>
+            <input name="landlordName" type="text" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input name="landlordEmail" type="email" />
+          </label>
+        </div>
+
+        <h3>Issue details</h3>
+        <div class="grid">
+          <label>
+            <span>Category</span>
+            <select name="category">
+              <option value="">Select…</option>
+              <option>Damp</option>
+              <option>Mould</option>
+              <option>Condensation</option>
+              <option>Ventilation</option>
+              <option>Leak</option>
+              <option>Heating</option>
+            </select>
+          </label>
+          <label>
+            <span>Severity</span>
+            <select name="severity">
+              <option value="">Select…</option>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          <span>Description<span class="required">*</span></span>
+          <textarea name="description" rows="5" required placeholder="Describe what you see, how long it has been present, rooms affected, and any health impacts."></textarea>
+        </label>
+
+        <div class="grid">
+          <label class="checkbox">
+            <input name="immediateDanger" type="checkbox" />
+            <span>Immediate danger to health/safety (emergency)</span>
+          </label>
+          <label class="checkbox">
+            <input name="vulnerablePersons" type="checkbox" />
+            <span>Vulnerable people in household (children, elderly, respiratory conditions)</span>
+          </label>
+          <label class="checkbox">
+            <input name="consentToShare" type="checkbox" />
+            <span>I consent to share details with landlord/local authority for this case</span>
+          </label>
+        </div>
+
+        <label>
+          <span>Photos (up to 6 images)</span>
+          <input name="photos" type="file" accept="image/*" multiple />
+        </label>
+
+        <div class="actions">
+          <button type="submit">Submit report</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="result" class="card hidden"></section>
+  </main>
+
+  <footer class="container muted small">
+    <p>Timelines are indicative and based on UK Awaab’s Law policy intent. Check local guidance for final requirements.</p>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
